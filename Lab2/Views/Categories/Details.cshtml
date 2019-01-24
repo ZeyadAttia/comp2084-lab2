@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+@if (ViewBag.CategoryNameMessage == null) {
+    // this will happen only if the user entered this link (GET: Categories/Details) directly in the url and without the required parameters as a query string, not using the provided links. 
+    <p>You did not select any category, please get to this page by clicking one of the categories in @Html.ActionLink("here", "Index", "Categories", null, new { style = "color: red; font-size: 1.5em" })</p>
+} else {
+    <p>@ViewBag.CategoryNameMessage</p>
+}
+
